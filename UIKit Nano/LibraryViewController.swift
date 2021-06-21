@@ -29,10 +29,14 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = libraryTableView.dequeueReusableCell(withIdentifier: "lib-music-cell", for: indexPath)
+        // FIXME: -- deveria melhorar o tratamento dos optionals abaixo?
         
-        cell.textLabel?.text = library?[indexPath.row].title
-       //  cell.detailTextLabel?.text = "\()"
+        let cell = libraryTableView.dequeueReusableCell(withIdentifier: "library-cell", for: indexPath) as! LibraryCell
+        let cellItem: MusicCollection = (library?[indexPath.row])!
+        
+        cell.cellTitle.text = cellItem.title
+        cell.cellDetails.text = "\(cellItem.type == MusicCollection.MusicCollectionType.playlist ? "Playlist" : "Album") · \(cellItem.mainPerson)"
+        cell.cellImage.image = service?.getCoverImage(forItemIded: (cellItem.id))
         
         return cell
     }
