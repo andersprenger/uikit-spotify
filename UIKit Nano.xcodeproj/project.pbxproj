@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		71709755267D03E700C9C7D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71709754267D03E700C9C7D7 /* AppDelegate.swift */; };
 		71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71709756267D03E700C9C7D7 /* SceneDelegate.swift */; };
-		71709759267D03E700C9C7D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71709758267D03E700C9C7D7 /* ViewController.swift */; };
+		71709759267D03E700C9C7D7 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71709758267D03E700C9C7D7 /* LibraryViewController.swift */; };
 		7170975C267D03E700C9C7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7170975A267D03E700C9C7D7 /* Main.storyboard */; };
 		7170975E267D03E900C9C7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7170975D267D03E900C9C7D7 /* Assets.xcassets */; };
 		71709761267D03E900C9C7D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7170975F267D03E900C9C7D7 /* LaunchScreen.storyboard */; };
+		71EA523B268105BD00AA6381 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5239268105BC00AA6381 /* MusicService.swift */; };
+		71EA523C268105BD00AA6381 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 71EA523A268105BD00AA6381 /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71709751267D03E700C9C7D7 /* UIKit Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit Nano.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71709754267D03E700C9C7D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71709756267D03E700C9C7D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71709758267D03E700C9C7D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71709758267D03E700C9C7D7 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		7170975B267D03E700C9C7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7170975D267D03E900C9C7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71709760267D03E900C9C7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71709762267D03E900C9C7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71EA5239268105BC00AA6381 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
+		71EA523A268105BD00AA6381 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,10 @@
 			children = (
 				71709754267D03E700C9C7D7 /* AppDelegate.swift */,
 				71709756267D03E700C9C7D7 /* SceneDelegate.swift */,
-				71709758267D03E700C9C7D7 /* ViewController.swift */,
+				71709758267D03E700C9C7D7 /* LibraryViewController.swift */,
 				7170975A267D03E700C9C7D7 /* Main.storyboard */,
+				71EA523A268105BD00AA6381 /* data.json */,
+				71EA5239268105BC00AA6381 /* MusicService.swift */,
 				7170975D267D03E900C9C7D7 /* Assets.xcassets */,
 				7170975F267D03E900C9C7D7 /* LaunchScreen.storyboard */,
 				71709762267D03E900C9C7D7 /* Info.plist */,
@@ -127,6 +133,7 @@
 				71709761267D03E900C9C7D7 /* LaunchScreen.storyboard in Resources */,
 				7170975E267D03E900C9C7D7 /* Assets.xcassets in Resources */,
 				7170975C267D03E700C9C7D7 /* Main.storyboard in Resources */,
+				71EA523C268105BD00AA6381 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71709759267D03E700C9C7D7 /* ViewController.swift in Sources */,
+				71709759267D03E700C9C7D7 /* LibraryViewController.swift in Sources */,
 				71709755267D03E700C9C7D7 /* AppDelegate.swift in Sources */,
 				71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */,
+				71EA523B268105BD00AA6381 /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,11 +297,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7DG8QRAF9;
 				INFOPLIST_FILE = "UIKit Nano/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-Nano";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.academy.UIKit-Nano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -308,11 +317,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M7DG8QRAF9;
 				INFOPLIST_FILE = "UIKit Nano/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-Nano";
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.academy.UIKit-Nano";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
