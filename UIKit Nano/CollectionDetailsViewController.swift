@@ -26,6 +26,7 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = musicCollection?.title
         
         collectionImage.image = service?.getCoverImage(forItemIded: musicCollection!.id)
         collectionTitle.text = musicCollection?.title

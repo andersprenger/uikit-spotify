@@ -339,6 +339,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="DQE-an-0yv" kind="relationship" relationship="viewControllers" id="2Hz-Sb-ZXJ"/>
@@ -352,11 +353,12 @@
         <scene sceneID="P2U-9B-O5z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DQE-an-0yv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Library" image="heart.fill" catalog="system" id="ZF8-5m-NHG"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="book.closed.fill" catalog="system" id="ZF8-5m-NHG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ikl-Wq-IWG">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -388,6 +390,7 @@
     </scenes>
     <resources>
         <image name="0894b194d069c358c04e" width="300" height="300"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
