@@ -18,6 +18,7 @@
 		71EA523B268105BD00AA6381 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5239268105BC00AA6381 /* MusicService.swift */; };
 		71EA523C268105BD00AA6381 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 71EA523A268105BD00AA6381 /* data.json */; };
 		71EA523F26811CCE00AA6381 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA523E26811CCE00AA6381 /* LibraryCell.swift */; };
+		CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA091026826AA000CEBDBB /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		71EA5239268105BC00AA6381 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		71EA523A268105BD00AA6381 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		71EA523E26811CCE00AA6381 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		CDAA091026826AA000CEBDBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				71709758267D03E700C9C7D7 /* LibraryViewController.swift */,
 				71EA523E26811CCE00AA6381 /* LibraryCell.swift */,
 				7170975A267D03E700C9C7D7 /* Main.storyboard */,
+				CDAA091026826AA000CEBDBB /* AboutViewController.swift */,
 				714C687F268156640032D5AA /* CollectionDetailsViewController.swift */,
 				71AB953326817373009F1074 /* CollectionDetailsCell.swift */,
 				71EA523A268105BD00AA6381 /* data.json */,
@@ -159,6 +162,7 @@
 				71709755267D03E700C9C7D7 /* AppDelegate.swift in Sources */,
 				714C6880268156640032D5AA /* CollectionDetailsViewController.swift in Sources */,
 				71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */,
+				CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */,
 				71EA523B268105BD00AA6381 /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
