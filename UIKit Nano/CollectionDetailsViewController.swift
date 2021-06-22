@@ -56,4 +56,19 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         
         return cell
     }
+    
+    
+    
+    @IBAction func buttonInfo(_ sender: Any) {
+        
+        performSegue(withIdentifier: "aboutCell", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let aboutViewController = segue.destination as? AboutViewController
+        aboutViewController?.reciver = musicCollection
+        aboutViewController?.service = service
+    }
+    
 }

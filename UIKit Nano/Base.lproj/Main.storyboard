@@ -222,7 +222,7 @@
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" id="Z3T-A6-Lbz">
                             <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="FXI-Pd-02a" kind="presentation" identifier="infoAlbum" id="dRK-Sc-OEJ"/>
+                                <action selector="buttonInfo:" destination="CNJ-Su-7Vh" id="GWJ-QP-J87"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -233,13 +233,14 @@
                         <outlet property="collectionSize" destination="AOh-tP-JXJ" id="bwz-wU-lfE"/>
                         <outlet property="collectionTable" destination="zk3-9h-QN4" id="OLL-5g-E82"/>
                         <outlet property="collectionTitle" destination="P5W-Si-Dbb" id="4Bp-gc-nQq"/>
+                        <segue destination="FXI-Pd-02a" kind="presentation" identifier="aboutCell" id="eSC-NN-FJN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-Gi-InX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621.7391304347827" y="127.90178571428571"/>
+            <point key="canvasLocation" x="1665" y="128"/>
         </scene>
-        <!--About View Controller-->
+        <!--About-->
         <scene sceneID="30w-L9-VXs">
             <objects>
                 <viewController id="iqT-rr-7OV" customClass="AboutViewController" customModule="UIKit_Nano" customModuleProvider="target" sceneMemberID="viewController">
@@ -309,7 +310,7 @@
                             <constraint firstItem="nmv-cP-cNs" firstAttribute="leading" secondItem="X18-bU-h0b" secondAttribute="leading" constant="16" id="iBg-ty-SCd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kxL-Pq-TgJ">
+                    <navigationItem key="navigationItem" title="About" id="kxL-Pq-TgJ">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="chevron.down" catalog="system" id="lAT-eA-7E2">
                             <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>

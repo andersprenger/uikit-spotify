@@ -9,6 +9,9 @@ import UIKit
 
 class AboutViewController: UIViewController {
     
+    var reciver:MusicCollection?
+    var service:MusicService?
+    
     
     @IBOutlet weak var albumImage: UIImageView!
     @IBOutlet weak var albumNameLabel: UILabel!
@@ -22,9 +25,13 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        albumImage.image =  service?.getCoverImage(forItemIded: reciver!.id)
+        
+        
         
     }
+    
+    
     
     //fazer divider entre as labels de texto grandao
 
