@@ -11,10 +11,13 @@ import Foundation
 class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var collectionImage: UIImageView!
+    
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var collectionDetails: UILabel!
+    
     @IBOutlet weak var collectionSize: UILabel!
     @IBOutlet weak var collectionDate: UILabel!
+    
     
     @IBOutlet weak var collectionTable: UITableView!
     
