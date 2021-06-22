@@ -18,6 +18,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var favoriteTabView: UITableView!
     
+    var searchController = UISearchController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         favorites = service?.favoriteMusics
         favoriteTabView.delegate  = self
         favoriteTabView.dataSource = self
+        navigationItem.searchController = searchController
         
-        // Do any additional setup after loading the view.
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,7 +40,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         service?.favoriteMusics
         let cell =
             favoriteTabView.dequeueReusableCell(withIdentifier: "favorite-cell", for: indexPath) as! FavoriteCell
+        let cellItem: Music = (favorites?[indexPath.row])!
+        cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
         
+        cell.labelTitleCell.text = cellItem.title
+        cell.labelSubtitleCell.text = cellItem.artist
         
         return cell
     }
