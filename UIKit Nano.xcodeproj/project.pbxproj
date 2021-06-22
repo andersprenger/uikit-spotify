@@ -16,6 +16,8 @@
 		71EA523B268105BD00AA6381 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5239268105BC00AA6381 /* MusicService.swift */; };
 		71EA523C268105BD00AA6381 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 71EA523A268105BD00AA6381 /* data.json */; };
 		71EA523F26811CCE00AA6381 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA523E26811CCE00AA6381 /* LibraryCell.swift */; };
+		CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */; };
+		CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		71EA5239268105BC00AA6381 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		71EA523A268105BD00AA6381 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		71EA523E26811CCE00AA6381 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				71709758267D03E700C9C7D7 /* LibraryViewController.swift */,
 				71EA523E26811CCE00AA6381 /* LibraryCell.swift */,
 				7170975A267D03E700C9C7D7 /* Main.storyboard */,
+				CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */,
+				CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */,
 				71EA523A268105BD00AA6381 /* data.json */,
 				71EA5239268105BC00AA6381 /* MusicService.swift */,
 				7170975D267D03E900C9C7D7 /* Assets.xcassets */,
@@ -151,6 +157,8 @@
 				71709759267D03E700C9C7D7 /* LibraryViewController.swift in Sources */,
 				71709755267D03E700C9C7D7 /* AppDelegate.swift in Sources */,
 				71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */,
+				CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */,
+				CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */,
 				71EA523B268105BD00AA6381 /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
