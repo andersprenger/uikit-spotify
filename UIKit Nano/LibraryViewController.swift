@@ -40,5 +40,16 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "library-to-detail-segue", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let collectionDetailsVC = segue.destination as? CollectionDetailsViewController {
+            collectionDetailsVC.musicCollection = library![sender as! Int]
+            collectionDetailsVC.service = self.service
+        }
+    }
 }
 
