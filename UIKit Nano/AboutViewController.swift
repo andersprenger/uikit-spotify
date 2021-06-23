@@ -23,18 +23,26 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         albumImage.image =  service?.getCoverImage(forItemIded: reciver!.id)
         titleLabel.text = reciver?.title
-        var sum = TimeInterval()
-        for i in 0..<(reciver?.musics.count ?? 0) {
-            sum += (reciver?.musics[i].length) ?? 0
-        }
         
+        // MARK: -- explicando o reduce...
+        // reduce eh basicamente um for com bastante açucar sintatico
+        // para cada music em reciver?.musics
+        // some a result (iniciado com 0 no parametro) music.length
+        // como a soma retorna um Double, e TimeInterval eh um type alias pra Double, funciona.
+        
+        let sum: TimeInterval? = reciver?.musics.reduce(0) { result, music in
+            result + music.length
+        }
+
+        // MARK: -- formatter pro TimeInterval virar uma String quase como esta no figma
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
-        formatter.unitsStyle = .abbreviated
+        formatter.unitsStyle = .abbreviated // pra ficar igual tem que mudar alguma coisa aqui
         
-        detailsLabel.text = "Album by \(reciver?.mainPerson ?? "[Artist]") \n \(reciver?.musics.count) songs, \(formatter.string(from: sum))"
+        detailsLabel.text = "\(reciver?.musics.count) songs, \(formatter.string(from: sum ?? 0))"
         aboutAlbumLabel.text = reciver?.albumDescription ?? "not an album, treat me 🩹"
         
         
