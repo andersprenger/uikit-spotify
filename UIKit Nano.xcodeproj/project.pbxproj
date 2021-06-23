@@ -22,6 +22,7 @@
 		CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */; };
 		CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA091026826AA000CEBDBB /* AboutViewController.swift */; };
 		CDAA09132683BB7200CEBDBB /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA09122683BB7200CEBDBB /* PlayingViewController.swift */; };
+		CDAA09152683BFC300CEBDBB /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA09142683BFC300CEBDBB /* QueueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		CDAA091026826AA000CEBDBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CDAA09122683BB7200CEBDBB /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		CDAA09142683BFC300CEBDBB /* QueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				71709758267D03E700C9C7D7 /* LibraryViewController.swift */,
 				71EA523E26811CCE00AA6381 /* LibraryCell.swift */,
 				7170975A267D03E700C9C7D7 /* Main.storyboard */,
+				CDAA09142683BFC300CEBDBB /* QueueViewController.swift */,
 				CDAA09122683BB7200CEBDBB /* PlayingViewController.swift */,
 				CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */,
 				CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */,
@@ -173,6 +176,7 @@
 				714C6880268156640032D5AA /* CollectionDetailsViewController.swift in Sources */,
 				71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */,
 				CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */,
+				CDAA09152683BFC300CEBDBB /* QueueViewController.swift in Sources */,
 				CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */,
 				CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */,
 				71EA523B268105BD00AA6381 /* MusicService.swift in Sources */,
