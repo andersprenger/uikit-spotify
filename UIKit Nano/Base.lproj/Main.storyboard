@@ -303,7 +303,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Queue" id="ywi-38-grH">
-                        <barButtonItem key="rightBarButtonItem" image="chevron.compact.down" catalog="system" id="y3c-AF-VHL">
+                        <barButtonItem key="rightBarButtonItem" image="chevron.down" catalog="system" id="y3c-AF-VHL">
                             <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="buttonAction:" destination="NZO-u4-eX4" id="lKl-XZ-LSq"/>
@@ -630,6 +630,9 @@
                                     <navigationItem title="About" id="ZMz-VT-Uq7">
                                         <barButtonItem key="rightBarButtonItem" image="chevron.down" catalog="system" style="done" id="5Wj-Nz-nSL">
                                             <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="buttonViewDown:" destination="DWS-Wv-MOe" id="fwu-j8-F5v"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -757,7 +760,6 @@
         <image name="0894b194d069c358c04e" width="300" height="300"/>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
