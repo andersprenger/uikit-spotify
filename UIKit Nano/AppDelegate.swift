@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //id: 16a9b44f75da0f87aae8
+        //id: 9673c3632d56ab7d6a7d
+        UserDefaults.standard.setValue(["9673c3632d56ab7d6a7d","16a9b44f75da0f87aae8"], forKey:"favorite-musics-ids" )
         return true
     }
 
