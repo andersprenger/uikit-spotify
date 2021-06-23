@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -112,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8A-PC-uB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="-540"/>
+            <point key="canvasLocation" x="758" y="-645"/>
         </scene>
         <!--Playing-->
         <scene sceneID="KFG-aC-Kmj">
@@ -122,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rcO-UC-2zT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0wbDgMuAoy7O7pL3a69uZx" translatesAutoresizingMaskIntoConstraints="NO" id="rcO-UC-2zT">
                                 <rect key="frame" x="20" y="123" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rcO-UC-2zT" secondAttribute="height" multiplier="1:1" id="9UK-j9-BmL"/>
@@ -154,43 +153,43 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="heart" catalog="system"/>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Zm4-wL-4vu">
-                                <rect key="frame" x="20" y="622" width="350" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="jkR-ge-fwT"/>
-                                </constraints>
-                                <color key="progressTintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <imageReference key="progressImage" image="circle.fill" catalog="system" symbolScale="large" renderingMode="original"/>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku7-im-w0X">
-                                <rect key="frame" x="154.66666666666666" y="658" width="81" height="86"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="mUg-4O-crp"/>
-                                    <constraint firstAttribute="width" constant="81" id="yO5-MG-CLj"/>
-                                </constraints>
-                                <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="pause.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-un-DYQ">
-                                <rect key="frame" x="270.66666666666669" y="673" width="51" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="51" id="5ea-ap-Gc4"/>
-                                    <constraint firstAttribute="height" constant="57" id="gdz-C0-qLe"/>
-                                </constraints>
-                                <color key="tintColor" red="0.31372779610000001" green="0.31372129920000003" blue="0.31372570989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="forward.end.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-GJ-m8X">
-                                <rect key="frame" x="61.333333333333329" y="673" width="58.333333333333329" height="46.666666666666629"/>
-                                <color key="tintColor" red="0.31372779610000001" green="0.31372129920000003" blue="0.31372570989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="backward.end.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                </state>
-                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jBH-gs-CWt">
+                                <rect key="frame" x="18" y="622" width="354" height="31"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <color key="thumbTintColor" systemColor="systemGreenColor"/>
+                                <connections>
+                                    <action selector="progressAction:" destination="lbA-Hh-pss" eventType="valueChanged" id="uHT-Bc-cVg"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Npx-vJ-htB">
+                                <rect key="frame" x="60.666666666666657" y="662" width="268.66666666666674" height="79.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ws2-GJ-m8X">
+                                        <rect key="frame" x="0.0" y="16.333333333333368" width="58.333333333333336" height="46.666666666666657"/>
+                                        <color key="tintColor" red="0.31372779610000001" green="0.31372129920000003" blue="0.31372570989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="backward.end.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku7-im-w0X">
+                                        <rect key="frame" x="93.333333333333343" y="0.0" width="82" height="79.333333333333329"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" image="pause.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButton:" destination="lbA-Hh-pss" eventType="touchUpInside" id="xl1-Kb-n2d"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgs-un-DYQ">
+                                        <rect key="frame" x="210.33333333333334" y="16.333333333333368" width="58.333333333333343" height="46.666666666666657"/>
+                                        <color key="tintColor" red="0.31372779610000001" green="0.31372129920000003" blue="0.31372570989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="forward.end.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8g0-hI-5jE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -199,19 +198,15 @@
                             <constraint firstItem="rcO-UC-2zT" firstAttribute="top" secondItem="8g0-hI-5jE" secondAttribute="top" constant="67" id="5a0-YF-bfS"/>
                             <constraint firstItem="hn9-KA-oKf" firstAttribute="leading" secondItem="8g0-hI-5jE" secondAttribute="leading" constant="20" id="8AM-1M-40f"/>
                             <constraint firstItem="rcO-UC-2zT" firstAttribute="leading" secondItem="8g0-hI-5jE" secondAttribute="leading" constant="20" id="B4e-15-nCd"/>
-                            <constraint firstItem="ku7-im-w0X" firstAttribute="centerX" secondItem="7Ja-0T-Fpj" secondAttribute="centerX" id="CHj-Zp-5xh"/>
                             <constraint firstItem="hn9-KA-oKf" firstAttribute="top" secondItem="rcO-UC-2zT" secondAttribute="bottom" constant="66" id="EWQ-hd-k7v"/>
-                            <constraint firstItem="Zm4-wL-4vu" firstAttribute="leading" secondItem="8g0-hI-5jE" secondAttribute="leading" constant="20" id="HTC-rB-AUu"/>
-                            <constraint firstItem="bgs-un-DYQ" firstAttribute="top" secondItem="Zm4-wL-4vu" secondAttribute="bottom" constant="25" id="ITF-UT-o3f"/>
-                            <constraint firstItem="Zm4-wL-4vu" firstAttribute="top" secondItem="hn9-KA-oKf" secondAttribute="bottom" constant="21" id="O1H-0U-eSv"/>
-                            <constraint firstItem="ku7-im-w0X" firstAttribute="leading" secondItem="ws2-GJ-m8X" secondAttribute="trailing" constant="35" id="OgZ-XC-wan"/>
-                            <constraint firstItem="8g0-hI-5jE" firstAttribute="trailing" secondItem="Zm4-wL-4vu" secondAttribute="trailing" constant="20" id="WEA-QO-XIM"/>
+                            <constraint firstItem="jBH-gs-CWt" firstAttribute="top" secondItem="hn9-KA-oKf" secondAttribute="bottom" constant="21" id="Jvf-Ed-o2g"/>
+                            <constraint firstItem="Npx-vJ-htB" firstAttribute="top" secondItem="jBH-gs-CWt" secondAttribute="bottom" constant="10" id="XdV-99-2QG"/>
+                            <constraint firstItem="8g0-hI-5jE" firstAttribute="trailing" secondItem="jBH-gs-CWt" secondAttribute="trailing" constant="20" id="Y7C-er-wtv"/>
                             <constraint firstItem="rcO-UC-2zT" firstAttribute="centerX" secondItem="7Ja-0T-Fpj" secondAttribute="centerX" id="d6W-jH-gVv"/>
-                            <constraint firstItem="ku7-im-w0X" firstAttribute="top" secondItem="Zm4-wL-4vu" secondAttribute="bottom" constant="10" id="eLV-t6-Zxf"/>
-                            <constraint firstItem="bgs-un-DYQ" firstAttribute="leading" secondItem="ku7-im-w0X" secondAttribute="trailing" constant="35" id="grk-5t-TkK"/>
+                            <constraint firstItem="Npx-vJ-htB" firstAttribute="centerX" secondItem="7Ja-0T-Fpj" secondAttribute="centerX" id="l33-o7-5Sp"/>
+                            <constraint firstItem="jBH-gs-CWt" firstAttribute="leading" secondItem="8g0-hI-5jE" secondAttribute="leading" constant="20" id="q6T-Ou-GeX"/>
                             <constraint firstItem="4al-2b-Oaj" firstAttribute="leading" secondItem="hn9-KA-oKf" secondAttribute="trailing" constant="10" id="rWl-jB-TDK"/>
                             <constraint firstItem="4al-2b-Oaj" firstAttribute="top" secondItem="rcO-UC-2zT" secondAttribute="bottom" constant="82" id="sWo-8N-2gW"/>
-                            <constraint firstItem="ws2-GJ-m8X" firstAttribute="top" secondItem="Zm4-wL-4vu" secondAttribute="bottom" constant="25" id="seL-fG-C9u"/>
                             <constraint firstItem="8g0-hI-5jE" firstAttribute="trailing" secondItem="rcO-UC-2zT" secondAttribute="trailing" constant="20" id="xAx-6g-Okw"/>
                         </constraints>
                     </view>
@@ -223,10 +218,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playButtonOutlet" destination="ku7-im-w0X" id="JRJ-Qo-eM3"/>
+                        <outlet property="progressBar" destination="jBH-gs-CWt" id="qr6-zT-71X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEb-k9-3yK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3301.5384615384614" y="-645.4976303317535"/>
+            <point key="canvasLocation" x="2640" y="-645.4976303317535"/>
         </scene>
         <!--Queue-->
         <scene sceneID="QRK-TT-R10">
@@ -540,7 +539,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oqf-rI-BGi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="-540"/>
+            <point key="canvasLocation" x="-95" y="-645"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="NXB-KV-6fH">
@@ -678,16 +677,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP5-fs-Kaw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="-645"/>
+            <point key="canvasLocation" x="1665" y="-645"/>
         </scene>
     </scenes>
     <resources>
         <image name="0329cf1fa404f40b5159" width="300" height="300"/>
         <image name="0894b194d069c358c04e" width="300" height="300"/>
+        <image name="0wbDgMuAoy7O7pL3a69uZx" width="640" height="635"/>
         <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="forward.end.fill" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
