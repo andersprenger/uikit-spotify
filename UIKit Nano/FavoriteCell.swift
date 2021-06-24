@@ -47,10 +47,5 @@ class FavoriteCell: UITableViewCell {
 //            buttonFill.toggle()
 //            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
 //        }
-        
-      
-        
-        
-        
     }
 }
