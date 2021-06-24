@@ -50,8 +50,10 @@ class PlayingViewController: UIViewController {
         // FIXME: change button img here...
         if !player.isPlaying {
             player.play()
+            playButtonOutlet.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
         } else {
             player.pause()
+            playButtonOutlet.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         }
     }
     
