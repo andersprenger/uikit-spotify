@@ -42,6 +42,10 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
         cell.service = service
         cell.music = favorites![indexPath.row]
+        
+        let isFavorite = service?.favoriteMusics.contains(favorites![indexPath.row])
+        
+        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart" : "heart.fill"), for: .normal)
   
         cell.labelTitleCell.text = cellItem.title
         cell.labelSubtitleCell.text = cellItem.artist
