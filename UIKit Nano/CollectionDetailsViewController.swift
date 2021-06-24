@@ -10,6 +10,8 @@ import Foundation
 
 class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var intoButton: UIBarButtonItem!
+    
     @IBOutlet weak var collectionImage: UIImageView!
     
     @IBOutlet weak var collectionTitle: UILabel!
@@ -38,6 +40,10 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         dateFormater.setLocalizedDateFormatFromTemplate("MMMMdYYYY")
         
         collectionDate.text = "Released \(dateFormater.string(from: musicCollection!.referenceDate))"
+        
+        if musicCollection?.type == MusicCollection.MusicCollectionType.playlist {
+            intoButton.isEnabled = false
+        }
         
         collectionTable.dataSource = self
         collectionTable.delegate = self
@@ -70,7 +76,9 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     }
     
     @IBAction func buttonInfo(_ sender: Any) {
-        performSegue(withIdentifier: "aboutCell", sender: nil)
+        if musicCollection?.type == MusicCollection.MusicCollectionType.album {
+            performSegue(withIdentifier: "aboutCell", sender: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
