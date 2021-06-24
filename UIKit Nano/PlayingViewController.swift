@@ -9,21 +9,42 @@ import UIKit
 import AVFoundation
 
 class PlayingViewController: UIViewController {
+    
+    var musicService: MusicService?
+    var queue: Queue?
+    var player: AVAudioPlayer!
 
     @IBOutlet weak var progressBar: UISlider!
     @IBOutlet weak var playButtonOutlet: UIButton!
     
-    var player: AVAudioPlayer!
+    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // init queue var
+        self.queue = musicService?.queue
+        
+        // init player
         let url = Bundle.main.url(forResource: "audio", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
         
+        // setting the progress bar size to the player's music duration
         progressBar.maximumValue = Float(player.duration)
         
-        let timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector("updateSlider"), userInfo: nil, repeats: true)
+        // updating the progress bar every 100 ms
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
+        
+        // updating cover image and labels to the music beeing played into the queue...
+        updateLayout(to: (queue?.nowPlaying)!)
+    }
+    
+    func updateLayout(to selectedMusic: Music){
+        coverImage.image = musicService?.getCoverImage(forItemIded: selectedMusic.id)
+        titleLabel.text  = selectedMusic.title
+        artistLabel.text = selectedMusic.artist
     }
     
     @IBAction func playButton(_ sender: UIButton) {
@@ -32,7 +53,6 @@ class PlayingViewController: UIViewController {
         } else {
             player.pause()
         }
-        print("ok")
     }
     
     @IBAction func progressAction(_ sender: UISlider) {

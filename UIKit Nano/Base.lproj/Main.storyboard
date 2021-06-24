@@ -219,8 +219,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="artistLabel" destination="9fE-eK-ZOs" id="mt6-UX-piz"/>
+                        <outlet property="coverImage" destination="rcO-UC-2zT" id="sNb-P1-zRt"/>
                         <outlet property="playButtonOutlet" destination="ku7-im-w0X" id="JRJ-Qo-eM3"/>
                         <outlet property="progressBar" destination="jBH-gs-CWt" id="qr6-zT-71X"/>
+                        <outlet property="titleLabel" destination="5sU-eX-NH9" id="BuQ-JP-6w2"/>
                         <segue destination="NZO-u4-eX4" kind="show" identifier="playing-to-queue-segue" id="n2p-Fr-8cp"/>
                     </connections>
                 </viewController>

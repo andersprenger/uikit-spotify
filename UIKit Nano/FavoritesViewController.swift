@@ -53,6 +53,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     // when a row is selected, it performs a segue to the player...
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "favorites-to-playing-segue", sender: indexPath)
+        // ...and also set it's music as queue.nowPlaying
+        guard let selectedMusic = favorites?[indexPath.row] else { return }
+        service?.startPlaying(music: selectedMusic)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
