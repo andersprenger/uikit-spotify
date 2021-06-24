@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mby-fd-zO5">
-    <device id="retina6_0" orientation="portrait" appearance="dark"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -61,7 +61,7 @@
                                                         <constraint firstAttribute="width" constant="36" id="vpn-tO-VK4"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                     <state key="normal" image="heart" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="regular"/>
                                                     </state>
@@ -151,10 +151,13 @@
                                     <constraint firstAttribute="width" constant="40" id="JJJ-uO-Yho"/>
                                     <constraint firstAttribute="height" constant="40" id="ddh-6K-qzq"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal" image="heart" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                 </state>
+                                <connections>
+                                    <action selector="favoriteButton:" destination="lbA-Hh-pss" eventType="touchUpInside" id="L2k-qj-Mt2"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jBH-gs-CWt">
                                 <rect key="frame" x="18" y="622" width="354" height="31"/>
@@ -224,6 +227,7 @@
                     <connections>
                         <outlet property="artistLabel" destination="9fE-eK-ZOs" id="mt6-UX-piz"/>
                         <outlet property="coverImage" destination="rcO-UC-2zT" id="sNb-P1-zRt"/>
+                        <outlet property="favoriteButton" destination="4al-2b-Oaj" id="coG-U6-OPl"/>
                         <outlet property="playButtonOutlet" destination="ku7-im-w0X" id="JRJ-Qo-eM3"/>
                         <outlet property="progressBar" destination="jBH-gs-CWt" id="qr6-zT-71X"/>
                         <outlet property="titleLabel" destination="5sU-eX-NH9" id="BuQ-JP-6w2"/>
@@ -260,7 +264,7 @@
                                                         <constraint firstAttribute="width" constant="36" id="8yW-jI-WXv"/>
                                                         <constraint firstAttribute="height" constant="36" id="SbH-N3-ZZc"/>
                                                     </constraints>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" systemColor="systemGrayColor"/>
                                                     <state key="normal" image="heart" catalog="system"/>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-W4-hXg">
@@ -462,8 +466,8 @@
                                                         <constraint firstAttribute="width" constant="36" id="5j4-ev-L2A"/>
                                                         <constraint firstAttribute="height" constant="36" id="FH9-hV-D2V"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="heart.fill" catalog="system"/>
+                                                    <color key="tintColor" systemColor="systemGrayColor"/>
+                                                    <state key="normal" image="heart" catalog="system"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -812,7 +816,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QUq-QX-VUP"/>
+        <segue reference="DAI-CA-oFf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="0894b194d069c358c04e" width="300" height="300"/>
@@ -832,6 +836,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

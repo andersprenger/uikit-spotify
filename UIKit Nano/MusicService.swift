@@ -137,7 +137,7 @@ final class MusicService {
     /// - Parameters:
     ///   - music: The music to be added to, or removed from, the list of favorite musics of the user.
     ///   - isFavorite: Whether the music is favorited or not.
-    func toggleFavorite(music: Music, isFavorite: Bool) {
+    func toggleFavorite(music: Music, isFavorite: Bool) { 
         if isFavorite {
             favoriteMusics.append(music)
         } else {

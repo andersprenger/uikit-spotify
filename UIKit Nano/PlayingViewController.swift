@@ -20,6 +20,9 @@ class PlayingViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,5 +69,14 @@ class PlayingViewController: UIViewController {
     @objc func updateSlider(){
         progressBar.value = Float(player.currentTime)
     }
+    
+    
+    
+    
+    @IBAction func favoriteButton(_ sender: UIButton) {
+       
+        
+    }
+    
     
 }

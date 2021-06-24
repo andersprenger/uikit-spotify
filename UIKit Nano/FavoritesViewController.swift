@@ -40,7 +40,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = favoriteTabView.dequeueReusableCell(withIdentifier: "favorite-cell", for: indexPath) as! FavoriteCell
         let cellItem: Music = (favorites?[indexPath.row])!
         cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
-        
+        cell.service = service
+        cell.music = favorites![indexPath.row]
+  
         cell.labelTitleCell.text = cellItem.title
         cell.labelSubtitleCell.text = cellItem.artist
         
