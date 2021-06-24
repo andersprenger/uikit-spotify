@@ -166,4 +166,13 @@ final class MusicService {
         queue.nextInCollection.removeAll { $0 == music }
         queue.nextSuggested.removeAll { $0 == music }
     }
+    
+    // MARK: customizations
+    
+    func skipQueue(){
+        queue.nowPlaying = queue.nextInCollection.first
+        if !queue.nextInCollection.isEmpty {
+            queue.nextInCollection.removeFirst()            
+        }
+    }
 }

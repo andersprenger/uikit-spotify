@@ -8,7 +8,6 @@
 import UIKit
 
 class FavoriteCell: UITableViewCell {
-
     
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var labelTitleCell: UILabel!
@@ -17,18 +16,6 @@ class FavoriteCell: UITableViewCell {
     
     
     @IBAction func favoriteButton(_ sender: UIButton) {
-        
+        // FIXME: implement me...
     }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
 }
