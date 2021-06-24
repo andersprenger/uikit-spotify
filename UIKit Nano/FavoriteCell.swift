@@ -23,6 +23,9 @@ class FavoriteCell: UITableViewCell {
         // FIXME: implement me...
         
         let isFavorite = service?.favoriteMusics.contains(music!)
+        if isFavorite == true{
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
         
         if isFavorite! { // se for favorito, eu quero que ele n seja mais...
             service?.toggleFavorite(music: music!, isFavorite: false)
@@ -44,6 +47,8 @@ class FavoriteCell: UITableViewCell {
 //            buttonFill.toggle()
 //            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
 //        }
+        
+      
         
         
         

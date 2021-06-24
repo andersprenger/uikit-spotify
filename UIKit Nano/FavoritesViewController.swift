@@ -73,4 +73,15 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         // sending the data to our destination
         playerControler.musicService = service
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+            self.favoriteTabView.reloadData()
+    }
+    
+    func filterSearch(nameMusic: String) -> [Music]{
+        favorites?.filter({ Music in
+            Music.title.contains(nameMusic)
+        }) ?? []
+    }
 }

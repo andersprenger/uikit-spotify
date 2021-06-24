@@ -175,4 +175,7 @@ final class MusicService {
             queue.nextInCollection.removeFirst()            
         }
     }
+    
+    
+    
 }
