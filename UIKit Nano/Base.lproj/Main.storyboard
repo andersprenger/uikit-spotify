@@ -37,13 +37,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7o-Wn-9SR">
                                                     <rect key="frame" x="90" y="22.000000000000004" width="218" height="32.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuz I Love You (Super Deluxe)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksz-ZB-49u">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Music Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksz-ZB-49u">
                                                             <rect key="frame" x="0.0" y="0.0" width="218" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Album · Lizzo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AP-tj-EMt">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="[Artist]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AP-tj-EMt">
                                                             <rect key="frame" x="0.0" y="18" width="218" height="14.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -82,12 +82,12 @@
                                                 <constraint firstItem="g7o-Wn-9SR" firstAttribute="leading" secondItem="V06-oJ-9fc" secondAttribute="trailing" constant="10" id="vgT-U6-R60"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="favoriteButton" destination="ye2-bb-Kfz" id="0Ix-SZ-wf0"/>
                                             <outlet property="imageCell" destination="V06-oJ-9fc" id="Y5E-FQ-7yg"/>
                                             <outlet property="labelSubtitleCell" destination="0AP-tj-EMt" id="nk6-qz-8W3"/>
                                             <outlet property="labelTitleCell" destination="ksz-ZB-49u" id="8Fi-n7-jHD"/>
-                                            <segue destination="zIw-3Y-37w" kind="presentation" id="ztb-Va-F14"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -107,11 +107,12 @@
                     <connections>
                         <outlet property="FavoriteTabView" destination="iEF-XC-ZOF" id="vgj-7l-3qP"/>
                         <outlet property="favoriteTabView" destination="iEF-XC-ZOF" id="C98-02-jtj"/>
+                        <segue destination="zIw-3Y-37w" kind="presentation" identifier="favorites-to-playing-segue" id="DAI-CA-oFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8A-PC-uB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="-645"/>
+            <point key="canvasLocation" x="757" y="-645"/>
         </scene>
         <!--Playing-->
         <scene sceneID="KFG-aC-Kmj">
@@ -130,14 +131,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hn9-KA-oKf">
                                 <rect key="frame" x="20" y="539" width="300" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Musica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sU-eX-NH9">
-                                        <rect key="frame" x="0.0" y="0.0" width="173.33333333333334" height="33.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Music Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sU-eX-NH9">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-eK-ZOs">
-                                        <rect key="frame" x="0.0" y="41.666666666666629" width="53" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Artist]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-eK-ZOs">
+                                        <rect key="frame" x="0.0" y="41.666666666666629" width="56" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -214,7 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Playing" id="p1U-f6-Oci">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="list.dash" catalog="system" id="uvf-JN-rTG">
-                            <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
                                 <segue destination="NZO-u4-eX4" kind="show" id="D1h-F1-AdL"/>
                             </connections>
@@ -227,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEb-k9-3yK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640" y="-645.4976303317535"/>
+            <point key="canvasLocation" x="3469" y="-645"/>
         </scene>
         <!--Queue-->
         <scene sceneID="QRK-TT-R10">
@@ -268,13 +269,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZHG-7E-8yG">
                                                     <rect key="frame" x="90" y="22.000000000000004" width="218" height="32.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55V-K4-eNp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Music Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55V-K4-eNp">
                                                             <rect key="frame" x="0.0" y="0.0" width="218" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmV-UR-Z04">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Artist]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmV-UR-Z04">
                                                             <rect key="frame" x="0.0" y="18" width="218" height="14.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                             <nil key="textColor"/>
@@ -303,7 +304,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Queue" id="ywi-38-grH">
                         <barButtonItem key="rightBarButtonItem" image="chevron.down" catalog="system" id="y3c-AF-VHL">
-                            <color key="tintColor" red="0.18915704320000001" green="1" blue="0.1200478361" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
                                 <action selector="buttonAction:" destination="NZO-u4-eX4" id="lKl-XZ-LSq"/>
                             </connections>
@@ -312,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEw-bQ-19b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4196.9230769230771" y="-645.4976303317535"/>
+            <point key="canvasLocation" x="4297" y="-645"/>
         </scene>
         <!--layout-to-collection-details-->
         <scene sceneID="tne-QT-ifu">
@@ -343,13 +344,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cqG-SS-WdK">
                                                     <rect key="frame" x="90.000000000000014" y="22.000000000000004" width="252.33333333333337" height="32.333333333333343"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuz I Love You (Super Deluxe)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07U-hB-WEM">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Collection Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07U-hB-WEM">
                                                             <rect key="frame" x="0.0" y="0.0" width="252.33333333333334" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album · Lizzo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dop-Tm-4nJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Collection] · [Artist]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dop-Tm-4nJ">
                                                             <rect key="frame" x="0.0" y="18" width="252.33333333333334" height="14.333333333333336"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -436,13 +437,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BRA-v3-SWB">
                                                     <rect key="frame" x="78" y="13.666666666666664" width="252" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6r-2K-8pa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Music Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6r-2K-8pa">
                                                             <rect key="frame" x="0.0" y="0.0" width="252" height="19.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoD-t5-DAj">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Artist]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoD-t5-DAj">
                                                             <rect key="frame" x="0.0" y="19.333333333333332" width="252" height="15.666666666666668"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -483,14 +484,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z6A-cZ-nd8">
                                 <rect key="frame" x="148" y="104" width="226" height="58"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5W-Si-Dbb">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="33.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Title]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5W-Si-Dbb">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="33.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDj-fB-D8C">
-                                        <rect key="frame" x="0.0" y="37.666666666666657" width="42.666666666666664" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Collection] by [Name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDj-fB-D8C">
+                                        <rect key="frame" x="0.0" y="37.666666666666657" width="177.33333333333334" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -500,13 +501,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mEJ-ca-9VT">
                                 <rect key="frame" x="148" y="189" width="226" height="37"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOh-tP-JXJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[n] songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOh-tP-JXJ">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj2-Yh-IrR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released [formated date]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bj2-Yh-IrR">
                                         <rect key="frame" x="0.0" y="19" width="226" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -547,6 +548,7 @@
                         <outlet property="collectionSize" destination="AOh-tP-JXJ" id="bwz-wU-lfE"/>
                         <outlet property="collectionTable" destination="zk3-9h-QN4" id="OLL-5g-E82"/>
                         <outlet property="collectionTitle" destination="P5W-Si-Dbb" id="4Bp-gc-nQq"/>
+                        <segue destination="zIw-3Y-37w" kind="presentation" identifier="library-to-player" id="QUq-QX-VUP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwC-Gi-InX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -733,7 +735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ll0-YE-7Ti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="128"/>
+            <point key="canvasLocation" x="2640" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="blb-XK-8kz">
@@ -743,6 +745,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ia-mY-l1i">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -751,9 +754,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wP5-fs-Kaw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="-645"/>
+            <point key="canvasLocation" x="2640" y="-645"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DAI-CA-oFf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="0329cf1fa404f40b5159" width="300" height="300"/>
         <image name="0894b194d069c358c04e" width="300" height="300"/>
