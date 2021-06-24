@@ -171,8 +171,8 @@ final class MusicService {
     
     func skipQueue(){
         queue.nowPlaying = queue.nextInCollection.first
-        queue.nextInCollection = queue.nextInCollection.filter { music in
-            music != queue.nowPlaying
+        if !queue.nextInCollection.isEmpty {
+            queue.nextInCollection.removeFirst()            
         }
     }
 }
