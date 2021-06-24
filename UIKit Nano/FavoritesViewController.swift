@@ -40,6 +40,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         let cellItem: Music = (service?.favoriteMusics[indexPath.row])!
         cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
         cell.service = service
+        cell.father = self
         cell.music = service?.favoriteMusics[indexPath.row]
         
         let isFavorite = service?.favoriteMusics.contains((service?.favoriteMusics[indexPath.row])!)

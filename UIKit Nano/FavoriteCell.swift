@@ -16,6 +16,7 @@ class FavoriteCell: UITableViewCell {
     
     var service:MusicService?
     var music:Music?
+    var father: FavoritesViewController?
     
     //var buttonFill: Bool = false
     
@@ -34,6 +35,8 @@ class FavoriteCell: UITableViewCell {
             service?.toggleFavorite(music: music!, isFavorite: true)
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
+        
+        father!.favoriteTabView.reloadData()
         
         print(service?.favoriteMusics)
         
