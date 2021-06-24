@@ -7,25 +7,31 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = table.dequeueReusableCell(withIdentifier: "about-top-cell") as! AboutTopViewCell
+            return cell
+        } else {
+            let cell = table.dequeueReusableCell(withIdentifier: "about-bottom-cell") as! AboutBottomTableViewCell
+            return cell
+        }
+    }
+    
     
     var reciver:MusicCollection?
     var service:MusicService?
     
-    @IBOutlet weak var albumImage: UIImageView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var aboutAlbumLabel: UILabel!
-    
-    @IBOutlet weak var aboutArtistTitleLabel: UIStackView!
-    @IBOutlet weak var aboutArtistLabel: UILabel!
+    @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        albumImage.image =  service?.getCoverImage(forItemIded: reciver!.id)
-        titleLabel.text = reciver?.title
+        table.dataSource = self
         
         // MARK: -- explicando o reduce...
         // reduce eh basicamente um for com bastante açucar sintatico
@@ -41,11 +47,6 @@ class AboutViewController: UIViewController {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated // pra ficar igual tem que mudar alguma coisa aqui
-        
-        detailsLabel.text = "\(reciver?.musics.count) songs, \(formatter.string(from: sum ?? 0))"
-        aboutAlbumLabel.text = reciver?.albumDescription ?? "not an album, treat me 🩹"
-        
-        
     }
     
     
