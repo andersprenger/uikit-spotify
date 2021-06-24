@@ -190,6 +190,9 @@
                                         <state key="normal" image="forward.end.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                         </state>
+                                        <connections>
+                                            <action selector="skipButton:" destination="lbA-Hh-pss" eventType="touchUpInside" id="rig-Um-PDL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
