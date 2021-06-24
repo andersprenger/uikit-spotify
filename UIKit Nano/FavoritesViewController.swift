@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, favoriteCellDelegate {
+    func toggleFavorite(music: Music) {
+        favoriteTabView.reloadData()
+    }
+    
     
     
     //id: 16a9b44f75da0f87aae8
@@ -40,13 +44,13 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         let cellItem: Music = (service?.favoriteMusics[indexPath.row])!
         cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
         cell.service = service
-        cell.father = self
+        cell.delegate = self
         cell.music = service?.favoriteMusics[indexPath.row]
         
         let isFavorite = service?.favoriteMusics.contains((service?.favoriteMusics[indexPath.row])!)
         
-        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart" : "heart.fill"), for: .normal)
-  
+        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
+        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
         cell.labelTitleCell.text = cellItem.title
         cell.labelSubtitleCell.text = cellItem.artist
         
@@ -84,4 +88,9 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             Music.title.contains(nameMusic)
         }) ?? []
     }
+    
+//    override func viewWillLayoutSubviews() {
+//        super.viewDidAppear(animated)
+//        favoriteTabView.reloadData()
+//    }
 }

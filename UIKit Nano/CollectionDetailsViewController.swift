@@ -10,6 +10,8 @@ import Foundation
 
 class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
     @IBOutlet weak var intoButton: UIBarButtonItem!
     
     @IBOutlet weak var collectionImage: UIImageView!
@@ -56,6 +58,11 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = collectionTable.dequeueReusableCell(withIdentifier: "collection-cell") as! CollectionDetailsCell
         let music = musicCollection?.musics[indexPath.row]
+        
+//        let isFavorite = service?.favoriteMusics.contains((service?.favoriteMusics[indexPath.row])!)
+//        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
+//        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
+        
         
         cell.cellImage.image = service?.getCoverImage(forItemIded: music!.id)
         cell.cellTitle.text = music?.title
