@@ -105,7 +105,7 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     
     // FIXME: -- extra feature: swipe to delete (n esta persistindo)
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }
     

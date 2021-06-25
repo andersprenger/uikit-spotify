@@ -21,7 +21,12 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         libraryTableView.delegate = self
         
         self.library = service?.loadLibrary()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.library = service?.loadLibrary()
+
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
