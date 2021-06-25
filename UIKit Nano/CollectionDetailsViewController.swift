@@ -20,7 +20,6 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var collectionSize: UILabel!
     @IBOutlet weak var collectionDate: UILabel!
     
-    
     @IBOutlet weak var collectionTable: UITableView!
     
     var service: MusicService?
@@ -49,6 +48,10 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         collectionTable.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.collectionTable.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         musicCollection!.musics.count
     }
@@ -56,6 +59,13 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = collectionTable.dequeueReusableCell(withIdentifier: "collection-cell") as! CollectionDetailsCell
         let music = musicCollection?.musics[indexPath.row]
+        
+        cell.service = service
+        cell.music = music
+        
+        let isFavorite = service?.favoriteMusics.contains(music!)
+        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
+        cell.favoriteButton.tintColor = isFavorite! ? .red : .systemGray
         
         cell.cellImage.image = service?.getCoverImage(forItemIded: music!.id)
         cell.cellTitle.text = music?.title
@@ -66,11 +76,11 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "library-to-player", sender: nil)
-        // abaixo s
+        
         service?.startPlaying(collection: musicCollection!)
         
         for _ in 0..<indexPath.row {
-            service?.skipQueue()
+            service?.skipNextQueue()
         }
         
     }
@@ -93,4 +103,22 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    // FIXME: -- extra feature: swipe to delete (n esta persistindo)
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete, musicCollection?.type == .playlist {
+            tableView.beginUpdates()
+            
+            service?.removeMusic((musicCollection!.musics[indexPath.row]), from: musicCollection!)
+            musicCollection = service?.getCollection(id: musicCollection!.id)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
 }

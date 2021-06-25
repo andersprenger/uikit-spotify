@@ -7,42 +7,71 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteCellDelegate, UISearchResultsUpdating {
     
     //id: 16a9b44f75da0f87aae8
     //id: 9673c3632d56ab7d6a7d
+
+    @IBOutlet weak var favoriteTabView: UITableView!
     
     private var service: MusicService?
-    private var favorites: [Music]?
-    
-    
-    @IBOutlet weak var favoriteTabView: UITableView!
     
     var searchController = UISearchController()
     
+    var searchResults: [Music]?
+    
+    func toggleFavorite(music: Music) {
+        favoriteTabView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.service = try? MusicService()
-        favorites = service?.favoriteMusics
         favoriteTabView.delegate  = self
         favoriteTabView.dataSource = self
         navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+    }
+    
+    @objc(updateSearchResultsForSearchController:) func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        searchResults = filterSearch(nameMusic: text)
         
-        
+        favoriteTabView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        service?.favoriteMusics.count ?? 0
+        if searchController.isActive {
+            return searchResults?.count ?? 0
+        } else {
+            return service?.favoriteMusics.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoriteTabView.dequeueReusableCell(withIdentifier: "favorite-cell", for: indexPath) as! FavoriteCell
-        let cellItem: Music = (favorites?[indexPath.row])!
-        cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
         
-        cell.labelTitleCell.text = cellItem.title
-        cell.labelSubtitleCell.text = cellItem.artist
+        let cellMusic: Music
+        
+        if searchController.isActive {
+            cellMusic = (searchResults![indexPath.row])
+        } else {
+            cellMusic = (service?.favoriteMusics[indexPath.row])!
+        }
+        
+        let isCellMusicFavorite = service?.favoriteMusics.contains(cellMusic)
+        
+        cell.service = service
+        cell.music = cellMusic
+        cell.delegate = self
+        
+        cell.imageCell.image = service?.getCoverImage(forItemIded: cellMusic.id)
+        cell.labelTitleCell.text = cellMusic.title
+        cell.labelSubtitleCell.text = cellMusic.artist
+        
+        cell.favoriteButton.setImage(UIImage(systemName: isCellMusicFavorite! ? "heart.fill" : "heart"), for: .normal)
+        cell.favoriteButton.tintColor = isCellMusicFavorite! ? .red : .systemGray
         
         return cell
     }
@@ -53,9 +82,15 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     // when a row is selected, it performs a segue to the player...
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "favorites-to-playing-segue", sender: indexPath)
+        
         // ...and also set it's music as queue.nowPlaying
-        guard let selectedMusic = favorites?[indexPath.row] else { return }
-        service?.startPlaying(music: selectedMusic)
+        if searchController.isActive {
+            guard let selectedMusic = searchResults?[indexPath.row] else { return }
+            service?.startPlaying(music: selectedMusic)
+        } else {
+            guard let selectedMusic = service?.favoriteMusics[indexPath.row] else { return }
+            service?.startPlaying(music: selectedMusic)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,5 +101,15 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         // sending the data to our destination
         playerControler.musicService = service
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.favoriteTabView.reloadData()
+    }
+    
+    func filterSearch(nameMusic: String) -> [Music]{
+        service?.favoriteMusics.filter({ Music in
+            Music.title.contains(nameMusic)
+        }) ?? []
     }
 }

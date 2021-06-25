@@ -20,6 +20,9 @@ class PlayingViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
+    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +38,14 @@ class PlayingViewController: UIViewController {
         
         // updating cover image and labels to the music beeing played into the queue...
         updateLayout(to: (musicService?.queue.nowPlaying)!)
+        
+        let music = musicService?.queue.nowPlaying!
+        guard let isFavorite = musicService?.favoriteMusics.contains(music!) else { return }
+        
+        if isFavorite {
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.tintColor = .red
+        }
     }
     
     func updateLayout(to selectedMusic: Music){
@@ -44,16 +55,23 @@ class PlayingViewController: UIViewController {
     }
     
     @IBAction func playButton(_ sender: UIButton) {
-        // FIXME: change button img here...
         if !player.isPlaying {
             player.play()
+            playButtonOutlet.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
         } else {
             player.pause()
+            playButtonOutlet.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         }
     }
     
     @IBAction func skipButton(_ sender: Any) {
-        musicService?.skipQueue()
+        musicService?.skipNextQueue()
+        guard let nowPlaying = musicService?.queue.nowPlaying else { return }
+        updateLayout(to: nowPlaying)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        musicService?.skipForwardQueue()
         guard let nowPlaying = musicService?.queue.nowPlaying else { return }
         updateLayout(to: nowPlaying)
     }
@@ -66,5 +84,19 @@ class PlayingViewController: UIViewController {
     @objc func updateSlider(){
         progressBar.value = Float(player.currentTime)
     }
-    
+
+    @IBAction func favoriteButton(_ sender: UIButton) {
+        let music = musicService?.queue.nowPlaying!
+        let isFavorite = musicService?.favoriteMusics.contains(music!)
+        
+        if isFavorite! { // se for favorito, eu quero que ele n seja mais...
+            musicService?.toggleFavorite(music: music!, isFavorite: false)
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else { // se n for, eu quero q seja
+            musicService?.toggleFavorite(music: music!, isFavorite: true)
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
+        favoriteButton.tintColor = isFavorite! ? .systemGray : .red
+    }
 }
