@@ -7,32 +7,28 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, favoriteCellDelegate {
+class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteCellDelegate {
+    
+    //id: 16a9b44f75da0f87aae8
+    //id: 9673c3632d56ab7d6a7d
+
+    @IBOutlet weak var favoriteTabView: UITableView!
+    
+    private var service: MusicService?
+    
+    var searchController = UISearchController()
+    
     func toggleFavorite(music: Music) {
         favoriteTabView.reloadData()
     }
     
-    
-    
-    //id: 16a9b44f75da0f87aae8
-    //id: 9673c3632d56ab7d6a7d
-    
-    private var service: MusicService?
-    
-    
-    @IBOutlet weak var favoriteTabView: UITableView!
-    
-    var searchController = UISearchController()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.service = try? MusicService()
         favoriteTabView.delegate  = self
         favoriteTabView.dataSource = self
         navigationItem.searchController = searchController
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,18 +37,19 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = favoriteTabView.dequeueReusableCell(withIdentifier: "favorite-cell", for: indexPath) as! FavoriteCell
-        let cellItem: Music = (service?.favoriteMusics[indexPath.row])!
-        cell.imageCell.image = service?.getCoverImage(forItemIded: cellItem.id)
+        let cellMusic: Music = (service?.favoriteMusics[indexPath.row])!
+        let isCellMusicFavorite = service?.favoriteMusics.contains(cellMusic)
+        
         cell.service = service
+        cell.music = cellMusic
         cell.delegate = self
-        cell.music = service?.favoriteMusics[indexPath.row]
         
-        let isFavorite = service?.favoriteMusics.contains((service?.favoriteMusics[indexPath.row])!)
+        cell.imageCell.image = service?.getCoverImage(forItemIded: cellMusic.id)
+        cell.labelTitleCell.text = cellMusic.title
+        cell.labelSubtitleCell.text = cellMusic.artist
         
-        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
-        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
-        cell.labelTitleCell.text = cellItem.title
-        cell.labelSubtitleCell.text = cellItem.artist
+        cell.favoriteButton.setImage(UIImage(systemName: isCellMusicFavorite! ? "heart.fill" : "heart"), for: .normal)
+        cell.favoriteButton.tintColor = isCellMusicFavorite! ? .red : .black
         
         return cell
     }
@@ -79,8 +76,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-            self.favoriteTabView.reloadData()
+        self.favoriteTabView.reloadData()
     }
     
     func filterSearch(nameMusic: String) -> [Music]{
@@ -88,9 +84,4 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             Music.title.contains(nameMusic)
         }) ?? []
     }
-    
-//    override func viewWillLayoutSubviews() {
-//        super.viewDidAppear(animated)
-//        favoriteTabView.reloadData()
-//    }
 }

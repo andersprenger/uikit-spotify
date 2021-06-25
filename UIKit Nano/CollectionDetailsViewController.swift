@@ -10,8 +10,6 @@ import Foundation
 
 class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     @IBOutlet weak var intoButton: UIBarButtonItem!
     
     @IBOutlet weak var collectionImage: UIImageView!
@@ -21,7 +19,6 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var collectionSize: UILabel!
     @IBOutlet weak var collectionDate: UILabel!
-    
     
     @IBOutlet weak var collectionTable: UITableView!
     
@@ -51,6 +48,10 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         collectionTable.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.collectionTable.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         musicCollection!.musics.count
     }
@@ -59,10 +60,13 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         let cell = collectionTable.dequeueReusableCell(withIdentifier: "collection-cell") as! CollectionDetailsCell
         let music = musicCollection?.musics[indexPath.row]
         
-//        let isFavorite = service?.favoriteMusics.contains((service?.favoriteMusics[indexPath.row])!)
-//        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
-//        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
+        cell.service = service
+        cell.music = music
         
+        let isFavorite = service?.favoriteMusics.contains(music!)
+        let image = UIImage(systemName: isFavorite! ? "heart.fill" : "heart")
+        image?.withTintColor(isFavorite! ? .red : .black)
+        cell.favoriteButton.setImage(image, for: .normal)
         
         cell.cellImage.image = service?.getCoverImage(forItemIded: music!.id)
         cell.cellTitle.text = music?.title
@@ -73,7 +77,7 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "library-to-player", sender: nil)
-        // abaixo s
+        
         service?.startPlaying(collection: musicCollection!)
         
         for _ in 0..<indexPath.row {

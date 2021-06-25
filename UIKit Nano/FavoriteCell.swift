@@ -7,10 +7,9 @@
 
 import UIKit
 
-protocol favoriteCellDelegate : AnyObject{
+protocol FavoriteCellDelegate : AnyObject{
     func toggleFavorite(music:Music)
 }
-
 
 class FavoriteCell: UITableViewCell {
     
@@ -21,19 +20,11 @@ class FavoriteCell: UITableViewCell {
     
     var service:MusicService?
     var music:Music?
-    //var father: FavoritesViewController?
-    weak var delegate: favoriteCellDelegate?
     
-    //var buttonFill: Bool = false
+    weak var delegate: FavoriteCellDelegate?
     
     @IBAction func favoriteButton(_ sender: UIButton) {
-        // FIXME: implement me...
-        
-        
         let isFavorite = service?.favoriteMusics.contains(music!)
-        if isFavorite == true{
-            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        }
         
         if isFavorite! { // se for favorito, eu quero que ele n seja mais...
             service?.toggleFavorite(music: music!, isFavorite: false)
@@ -45,8 +36,6 @@ class FavoriteCell: UITableViewCell {
         
         favoriteButton.tintColor = isFavorite! ? .black : .red
 
-        
         delegate?.toggleFavorite(music: music!)
-        
     }
 }

@@ -9,6 +9,18 @@ import UIKit
 import Foundation
 
 class AboutViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var table: UITableView!
+
+    var reciver:MusicCollection?
+    var service:MusicService?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        table.dataSource = self
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
@@ -59,22 +71,6 @@ class AboutViewController: UIViewController, UITableViewDataSource {
             return cell
         }
     }
-    
-    
-    var reciver:MusicCollection?
-    var service:MusicService?
-    
-    @IBOutlet weak var table: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        table.dataSource = self
-    }
-    
-    
-    
-    //fazer divider entre as labels de texto grandao
 
     @IBAction func buttonViewDown(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)

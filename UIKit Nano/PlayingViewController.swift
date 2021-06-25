@@ -71,14 +71,19 @@ class PlayingViewController: UIViewController {
     @objc func updateSlider(){
         progressBar.value = Float(player.currentTime)
     }
-    
-    
-    
-    
+
     @IBAction func favoriteButton(_ sender: UIButton) {
-       
+        let music = musicService?.queue.nowPlaying!
+        let isFavorite = musicService?.favoriteMusics.contains(music!)
         
+        if isFavorite! { // se for favorito, eu quero que ele n seja mais...
+            musicService?.toggleFavorite(music: music!, isFavorite: false)
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        } else { // se n for, eu quero q seja
+            musicService?.toggleFavorite(music: music!, isFavorite: true)
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        }
+        
+        favoriteButton.tintColor = isFavorite! ? .black : .red
     }
-    
-    
 }
