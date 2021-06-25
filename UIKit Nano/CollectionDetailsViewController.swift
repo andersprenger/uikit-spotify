@@ -64,9 +64,8 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         cell.music = music
         
         let isFavorite = service?.favoriteMusics.contains(music!)
-        let image = UIImage(systemName: isFavorite! ? "heart.fill" : "heart")
-        image?.withTintColor(isFavorite! ? .red : .black)
-        cell.favoriteButton.setImage(image, for: .normal)
+        cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
+        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
         
         cell.cellImage.image = service?.getCoverImage(forItemIded: music!.id)
         cell.cellTitle.text = music?.title
@@ -81,7 +80,7 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         service?.startPlaying(collection: musicCollection!)
         
         for _ in 0..<indexPath.row {
-            service?.skipQueue()
+            service?.skipNextQueue()
         }
         
     }
@@ -104,4 +103,22 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         }
     }
     
+    // FIXME: -- extra feature: swipe to delete (n esta persistindo)
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete, musicCollection?.type == .playlist {
+            tableView.beginUpdates()
+            
+            service?.removeMusic((musicCollection!.musics[indexPath.row]), from: musicCollection!)
+            musicCollection = service?.getCollection(id: musicCollection!.id)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+        }
+    }
 }

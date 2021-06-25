@@ -177,7 +177,6 @@ final class MusicService {
     }
     
     func skipForwardQueue(){
-        print("skip")
         if queue.collection == nil {
             return
         }
