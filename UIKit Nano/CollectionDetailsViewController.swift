@@ -65,7 +65,7 @@ class CollectionDetailsViewController: UIViewController, UITableViewDelegate, UI
         
         let isFavorite = service?.favoriteMusics.contains(music!)
         cell.favoriteButton.setImage(UIImage(systemName: isFavorite! ? "heart.fill" : "heart"), for: .normal)
-        cell.favoriteButton.tintColor = isFavorite! ? .red : .black
+        cell.favoriteButton.tintColor = isFavorite! ? .red : .systemGray
         
         cell.cellImage.image = service?.getCoverImage(forItemIded: music!.id)
         cell.cellTitle.text = music?.title

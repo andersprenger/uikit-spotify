@@ -38,8 +38,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         guard let text = searchController.searchBar.text else { return }
         searchResults = filterSearch(nameMusic: text)
         
-        print(text)
-        
         favoriteTabView.reloadData()
     }
     
@@ -58,7 +56,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         if searchController.isActive {
             cellMusic = (searchResults![indexPath.row])
-            print(indexPath)
         } else {
             cellMusic = (service?.favoriteMusics[indexPath.row])!
         }
@@ -74,7 +71,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.labelSubtitleCell.text = cellMusic.artist
         
         cell.favoriteButton.setImage(UIImage(systemName: isCellMusicFavorite! ? "heart.fill" : "heart"), for: .normal)
-        cell.favoriteButton.tintColor = isCellMusicFavorite! ? .red : .black
+        cell.favoriteButton.tintColor = isCellMusicFavorite! ? .red : .systemGray
         
         return cell
     }
@@ -85,9 +82,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     // when a row is selected, it performs a segue to the player...
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "favorites-to-playing-segue", sender: indexPath)
+        
         // ...and also set it's music as queue.nowPlaying
-        
-        
         if searchController.isActive {
             guard let selectedMusic = searchResults?[indexPath.row] else { return }
             service?.startPlaying(music: selectedMusic)

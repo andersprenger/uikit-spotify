@@ -97,6 +97,6 @@ class PlayingViewController: UIViewController {
             favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         }
         
-        favoriteButton.tintColor = isFavorite! ? .black : .red
+        favoriteButton.tintColor = isFavorite! ? .systemGray : .red
     }
 }
