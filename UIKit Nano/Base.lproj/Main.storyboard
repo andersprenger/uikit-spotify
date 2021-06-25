@@ -216,6 +216,9 @@
                                         <state key="normal" image="backward.end.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backButton:" destination="lbA-Hh-pss" eventType="touchUpInside" id="As8-Pt-bDb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku7-im-w0X">
                                         <rect key="frame" x="93.333333333333343" y="0.0" width="82" height="79.333333333333329"/>

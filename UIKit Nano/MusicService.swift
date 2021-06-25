@@ -169,13 +169,38 @@ final class MusicService {
     
     // MARK: customizations
     
-    func skipQueue(){
+    func skipNextQueue(){
         queue.nowPlaying = queue.nextInCollection.first
         if !queue.nextInCollection.isEmpty {
             queue.nextInCollection.removeFirst()            
         }
     }
     
-    
+    func skipForwardQueue(){
+        print("skip")
+        if queue.collection == nil {
+            return
+        }
+        
+        var pos: Int = 0
+        
+        for n in 0..<(queue.collection?.musics.count)! {
+            if queue.collection?.musics[n] == queue.nowPlaying{
+                pos = n
+                break
+            }
+        }
+        
+        pos -= 1
+        
+        if pos < 0 {
+            return
+        }
+        
+        startPlaying(collection: queue.collection!)
+        for _ in 0..<pos {
+            skipNextQueue()
+        }
+    }
     
 }

@@ -38,6 +38,14 @@ class PlayingViewController: UIViewController {
         
         // updating cover image and labels to the music beeing played into the queue...
         updateLayout(to: (musicService?.queue.nowPlaying)!)
+        
+        let music = musicService?.queue.nowPlaying!
+        guard let isFavorite = musicService?.favoriteMusics.contains(music!) else { return }
+        
+        if isFavorite {
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.tintColor = .red
+        }
     }
     
     func updateLayout(to selectedMusic: Music){
@@ -47,7 +55,6 @@ class PlayingViewController: UIViewController {
     }
     
     @IBAction func playButton(_ sender: UIButton) {
-        // FIXME: change button img here...
         if !player.isPlaying {
             player.play()
             playButtonOutlet.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
@@ -58,7 +65,13 @@ class PlayingViewController: UIViewController {
     }
     
     @IBAction func skipButton(_ sender: Any) {
-        musicService?.skipQueue()
+        musicService?.skipNextQueue()
+        guard let nowPlaying = musicService?.queue.nowPlaying else { return }
+        updateLayout(to: nowPlaying)
+    }
+    
+    @IBAction func backButton(_ sender: Any) {
+        musicService?.skipForwardQueue()
         guard let nowPlaying = musicService?.queue.nowPlaying else { return }
         updateLayout(to: nowPlaying)
     }
