@@ -8,62 +8,6 @@
 import Foundation
 import UIKit
 
-// MARK: Music
-
-struct Music: Hashable, Decodable {
-    let id: String
-    
-    let title: String
-    let artist: String
-    let length: TimeInterval
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-// MARK: - MusicCollection
-
-struct MusicCollection: Hashable, Decodable {
-    enum MusicCollectionType: String, Decodable {
-        case playlist
-        case album
-    }
-    
-    let id: String
-    
-    let title: String
-    let mainPerson: String
-    let referenceDate: Date
-    
-    var musics: [Music]
-    
-    let type: MusicCollectionType
-    let albumDescription: String?
-    let albumArtistDescription: String?
-    
-    var supportsEdition: Bool {
-        type == .playlist
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-// MARK: - Queue
-
-struct Queue {
-    var nowPlaying: Music?
-    
-    var collection: MusicCollection?
-    var nextInCollection: [Music]
-    
-    var nextSuggested: [Music]
-}
-
-// MARK: - MusicService
-
 final class MusicService {
     private let allMusics: [Music]
     private var collections: Set<MusicCollection>
@@ -177,28 +121,23 @@ final class MusicService {
     }
     
     func skipForwardQueue(){
-        if queue.collection == nil {
-            return
-        }
-        
-        var pos: Int = 0
-        
-        for n in 0..<(queue.collection?.musics.count)! {
-            if queue.collection?.musics[n] == queue.nowPlaying{
-                pos = n
-                break
-            }
-        }
-        
-        pos -= 1
-        
-        if pos < 0 {
-            return
-        }
+        guard let musicsCount = queue.collection?.musics.count else { return }
+        guard let playerMusic = queue.nowPlaying else { return }
         
         startPlaying(collection: queue.collection!)
-        for _ in 0..<pos {
-            skipNextQueue()
+        
+        for _ in 0..<musicsCount {
+            if queue.nextInCollection.first == playerMusic {
+                break
+            } else {
+                skipNextQueue()
+            }
+        }
+    }
+    
+    func searchfavoriteMusics(text: String) -> [Music]{
+        self.favoriteMusics.filter { music in
+            music.title.contains(text)
         }
     }
     

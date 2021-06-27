@@ -35,8 +35,8 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @objc(updateSearchResultsForSearchController:) func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        searchResults = filterSearch(nameMusic: text)
+        guard let searchString = searchController.searchBar.text else { return }
+        searchResults = service?.searchfavoriteMusics(text: searchString)
         
         favoriteTabView.reloadData()
     }
@@ -105,11 +105,5 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidAppear(_ animated: Bool) {
         self.favoriteTabView.reloadData()
-    }
-    
-    func filterSearch(nameMusic: String) -> [Music]{
-        service?.favoriteMusics.filter({ Music in
-            Music.title.contains(nameMusic)
-        }) ?? []
     }
 }

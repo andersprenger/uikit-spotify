@@ -30,12 +30,10 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        service?.loadLibrary().count ?? 0
+        library!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // FIXME: -- deveria melhorar o tratamento dos optionals abaixo?
-        
         let cell = libraryTableView.dequeueReusableCell(withIdentifier: "library-cell", for: indexPath) as! LibraryCell
         let cellItem: MusicCollection = (library?[indexPath.row])!
         
