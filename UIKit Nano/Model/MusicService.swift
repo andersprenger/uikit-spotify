@@ -115,6 +115,7 @@ final class MusicService {
     
     func skipNextQueue(){
         queue.nowPlaying = queue.nextInCollection.first
+        
         if !queue.nextInCollection.isEmpty {
             queue.nextInCollection.removeFirst()            
         }
@@ -125,6 +126,10 @@ final class MusicService {
         guard let playerMusic = queue.nowPlaying else { return }
         
         startPlaying(collection: queue.collection!)
+        
+        if queue.nowPlaying == playerMusic {
+            return
+        }
         
         for _ in 0..<musicsCount {
             if queue.nextInCollection.first == playerMusic {

@@ -116,6 +116,7 @@
 			children = (
 				7170975D267D03E900C9C7D7 /* Assets.xcassets */,
 				71E3F2672683CCB70076755E /* audio.mp3 */,
+				71EA523A268105BD00AA6381 /* data.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -185,11 +186,10 @@
 		71F8E9142687747E00EF084E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				71EA5239268105BC00AA6381 /* MusicService.swift */,
-				71C8D2902689173B0016BED7 /* Queue.swift */,
-				71C8D28E2689172A0016BED7 /* MusicCollection.swift */,
 				71C8D28C2689171B0016BED7 /* Music.swift */,
-				71EA523A268105BD00AA6381 /* data.json */,
+				71C8D28E2689172A0016BED7 /* MusicCollection.swift */,
+				71C8D2902689173B0016BED7 /* Queue.swift */,
+				71EA5239268105BC00AA6381 /* MusicService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
