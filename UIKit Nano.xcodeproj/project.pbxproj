@@ -14,6 +14,8 @@
 		7170975C267D03E700C9C7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7170975A267D03E700C9C7D7 /* Main.storyboard */; };
 		7170975E267D03E900C9C7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7170975D267D03E900C9C7D7 /* Assets.xcassets */; };
 		71709761267D03E900C9C7D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7170975F267D03E900C9C7D7 /* LaunchScreen.storyboard */; };
+		718BCDBF26FC14E700E5C432 /* DiscoverModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718BCDBE26FC14E700E5C432 /* DiscoverModels.swift */; };
+		718BCDC326FC1DDF00E5C432 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718BCDC226FC1DDF00E5C432 /* DiscoverViewController.swift */; };
 		71AB953426817373009F1074 /* CollectionDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB953326817373009F1074 /* CollectionDetailsCell.swift */; };
 		71C8D28D2689171B0016BED7 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8D28C2689171B0016BED7 /* Music.swift */; };
 		71C8D28F2689172A0016BED7 /* MusicCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8D28E2689172A0016BED7 /* MusicCollection.swift */; };
@@ -41,6 +43,8 @@
 		7170975D267D03E900C9C7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71709760267D03E900C9C7D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71709762267D03E900C9C7D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718BCDBE26FC14E700E5C432 /* DiscoverModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModels.swift; sourceTree = "<group>"; };
+		718BCDC226FC1DDF00E5C432 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		71AB953326817373009F1074 /* CollectionDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsCell.swift; sourceTree = "<group>"; };
 		71C8D28C2689171B0016BED7 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		71C8D28E2689172A0016BED7 /* MusicCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollection.swift; sourceTree = "<group>"; };
@@ -98,9 +102,18 @@
 			path = "UIKit Nano";
 			sourceTree = "<group>";
 		};
+		718BCDC126FC1CE200E5C432 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				718BCDC226FC1DDF00E5C432 /* DiscoverViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
 		71C8D28A268916DF0016BED7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				718BCDC126FC1CE200E5C432 /* Discover */,
 				71F8E90C2687730E00EF084E /* Library */,
 				71F8E90E2687734700EF084E /* About */,
 				71F8E90D2687733400EF084E /* Favorite */,
@@ -190,6 +203,7 @@
 				71C8D28E2689172A0016BED7 /* MusicCollection.swift */,
 				71C8D2902689173B0016BED7 /* Queue.swift */,
 				71EA5239268105BC00AA6381 /* MusicService.swift */,
+				718BCDBE26FC14E700E5C432 /* DiscoverModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +297,7 @@
 				71E3F26A2684B8270076755E /* AboutTopViewCell.swift in Sources */,
 				71709755267D03E700C9C7D7 /* AppDelegate.swift in Sources */,
 				714C6880268156640032D5AA /* CollectionDetailsViewController.swift in Sources */,
+				718BCDC326FC1DDF00E5C432 /* DiscoverViewController.swift in Sources */,
 				71709757267D03E700C9C7D7 /* SceneDelegate.swift in Sources */,
 				CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */,
 				CDAA09152683BFC300CEBDBB /* QueueViewController.swift in Sources */,
@@ -291,6 +306,7 @@
 				71C8D28F2689172A0016BED7 /* MusicCollection.swift in Sources */,
 				71C8D2912689173B0016BED7 /* Queue.swift in Sources */,
 				CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */,
+				718BCDBF26FC14E700E5C432 /* DiscoverModels.swift in Sources */,
 				71EA523B268105BD00AA6381 /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
