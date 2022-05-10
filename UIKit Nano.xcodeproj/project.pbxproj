@@ -26,12 +26,24 @@
 		71EA523B268105BD00AA6381 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA5239268105BC00AA6381 /* MusicService.swift */; };
 		71EA523C268105BD00AA6381 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 71EA523A268105BD00AA6381 /* data.json */; };
 		71EA523F26811CCE00AA6381 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA523E26811CCE00AA6381 /* LibraryCell.swift */; };
+		BE483CE1282ADA49008ED208 /* UIKit_Nano_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */; };
+		BE483CE8282ADA5E008ED208 /* MusicServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */; };
 		CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */; };
 		CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */; };
 		CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA091026826AA000CEBDBB /* AboutViewController.swift */; };
 		CDAA09132683BB7200CEBDBB /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA09122683BB7200CEBDBB /* PlayingViewController.swift */; };
 		CDAA09152683BFC300CEBDBB /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA09142683BFC300CEBDBB /* QueueViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE483CE2282ADA49008ED208 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71709749267D03E700C9C7D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71709750267D03E700C9C7D7;
+			remoteInfo = "UIKit Nano";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		714C687F268156640032D5AA /* CollectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +67,9 @@
 		71EA5239268105BC00AA6381 /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		71EA523A268105BD00AA6381 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../data.json; sourceTree = "<group>"; };
 		71EA523E26811CCE00AA6381 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit Nano Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_Nano_Tests.swift; sourceTree = "<group>"; };
+		BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServiceTests.swift; sourceTree = "<group>"; };
 		CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		CDAA091026826AA000CEBDBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +85,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE483CDB282ADA49008ED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				71709753267D03E700C9C7D7 /* UIKit Nano */,
+				BE483CDF282ADA49008ED208 /* UIKit Nano Tests */,
 				71709752267D03E700C9C7D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				71709751267D03E700C9C7D7 /* UIKit Nano.app */,
+				BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +241,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BE483CDF282ADA49008ED208 /* UIKit Nano Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */,
+				BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */,
+			);
+			path = "UIKit Nano Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,17 +270,39 @@
 			productReference = 71709751267D03E700C9C7D7 /* UIKit Nano.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BE483CDD282ADA49008ED208 /* UIKit Nano Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE483CE4282ADA49008ED208 /* Build configuration list for PBXNativeTarget "UIKit Nano Tests" */;
+			buildPhases = (
+				BE483CDA282ADA49008ED208 /* Sources */,
+				BE483CDB282ADA49008ED208 /* Frameworks */,
+				BE483CDC282ADA49008ED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE483CE3282ADA49008ED208 /* PBXTargetDependency */,
+			);
+			name = "UIKit Nano Tests";
+			productName = "UIKit Nano Tests";
+			productReference = BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		71709749267D03E700C9C7D7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					71709750267D03E700C9C7D7 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					BE483CDD282ADA49008ED208 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 71709750267D03E700C9C7D7;
 					};
 				};
 			};
@@ -265,6 +320,7 @@
 			projectRoot = "";
 			targets = (
 				71709750267D03E700C9C7D7 /* UIKit Nano */,
+				BE483CDD282ADA49008ED208 /* UIKit Nano Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +335,13 @@
 				7170975C267D03E700C9C7D7 /* Main.storyboard in Resources */,
 				71EA523C268105BD00AA6381 /* data.json in Resources */,
 				71E3F2682683CCB70076755E /* audio.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE483CDC282ADA49008ED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +374,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE483CDA282ADA49008ED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE483CE1282ADA49008ED208 /* UIKit_Nano_Tests.swift in Sources */,
+				BE483CE8282ADA5E008ED208 /* MusicServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE483CE3282ADA49008ED208 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71709750267D03E700C9C7D7 /* UIKit Nano */;
+			targetProxy = BE483CE2282ADA49008ED208 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7170975A267D03E700C9C7D7 /* Main.storyboard */ = {
@@ -489,6 +569,46 @@
 			};
 			name = Release;
 		};
+		BE483CE5282ADA49008ED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7DG8QRAF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-Nano-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit Nano.app/UIKit Nano";
+			};
+			name = Debug;
+		};
+		BE483CE6282ADA49008ED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7DG8QRAF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-Nano-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIKit Nano.app/UIKit Nano";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,6 +626,15 @@
 			buildConfigurations = (
 				71709766267D03E900C9C7D7 /* Debug */,
 				71709767267D03E900C9C7D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE483CE4282ADA49008ED208 /* Build configuration list for PBXNativeTarget "UIKit Nano Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE483CE5282ADA49008ED208 /* Debug */,
+				BE483CE6282ADA49008ED208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
