@@ -82,7 +82,7 @@
 		BE483CED282AE314008ED208 /* UIKit NanoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit NanoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE483CEF282AE314008ED208 /* UIKit_NanoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_NanoUITests.swift; sourceTree = "<group>"; };
 		BE483CF1282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_NanoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BE483CF8282AE56F008ED208 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestPlan.xctestplan; path = "UIKit Nano/TestPlan.xctestplan"; sourceTree = SOURCE_ROOT; };
+		BE483CF8282AE56F008ED208 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = "UIKit Nano/TestPlan.xctestplan"; sourceTree = SOURCE_ROOT; };
 		CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		CDAA091026826AA000CEBDBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */,
-				BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */,
+				BE7DFC4B282C33B8007C2412 /* Model */,
 			);
 			path = "UIKit Nano Tests";
 			sourceTree = "<group>";
@@ -280,6 +280,14 @@
 				BE483CF1282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift */,
 			);
 			path = "UIKit NanoUITests";
+			sourceTree = "<group>";
+		};
+		BE7DFC4B282C33B8007C2412 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

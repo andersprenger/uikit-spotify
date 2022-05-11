@@ -27,7 +27,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.service = try? MusicService()
+        self.service = try? LocalMusicService()
         favoriteTabView.delegate  = self
         favoriteTabView.dataSource = self
         navigationItem.searchController = searchController

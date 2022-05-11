@@ -16,7 +16,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.service = try? MusicService()
+        self.service = try? LocalMusicService()
         libraryTableView.dataSource = self
         libraryTableView.delegate = self
         
