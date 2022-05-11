@@ -74,12 +74,16 @@ class MusicServiceTests: XCTestCase {
     func testToggleFavorite() {
         // given
         guard let music = sut.loadLibrary().first?.musics.first else { fatalError() }
+        guard let music2 = sut.loadLibrary().first?.musics.last else { fatalError() }
 
         // when
         sut.toggleFavorite(music: music, isFavorite: true)
-        
+        sut.toggleFavorite(music: music2, isFavorite: true)
+        sut.toggleFavorite(music: music2, isFavorite: false)
+
         // then
         XCTAssert(sut.favoriteMusics.contains(music))
+        XCTAssertFalse(sut.favoriteMusics.contains(music2))
     }
     
     func testStartPlayingMusic() {
