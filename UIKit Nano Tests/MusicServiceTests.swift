@@ -21,11 +21,13 @@ class MusicServiceTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        sut = try MusicService()
     }
     
-    func testLoadLibrarySorted() {
+    func testLoadLibrary() {
         //given
-        
+        guard let sut = sut else { fatalError() }
         //when
         let collections = sut.loadLibrary()
         
@@ -33,26 +35,104 @@ class MusicServiceTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(collections.count, 2)
         XCTAssertGreaterThanOrEqual(collections[0].referenceDate, collections[1].referenceDate)
     }
+    
+    func testGetCollection() {
+        // given
+        guard let sut = sut else { fatalError() }
 
-    func testUnfavoriteMusic() {
-        //given
-        let music = sut.loadLibrary().first!.musics.first!
+        // when
+        let collectionId = sut.loadLibrary().first?.id
+        let collection = sut.getCollection(id: collectionId ?? "")
+        
+        // then
+        XCTAssertNotNil(collection)
+    }
+    
+    func testRemoveMusic() {
+        // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.first else { fatalError() }
+        
+        // when
+        sut.removeMusic(music, from: collection)
+        
+        // then
+        guard let collection = sut.loadLibrary().first else { fatalError() }
+        XCTAssertFalse(collection.musics.contains(music))
+    }
+    
+    func testGetCoverImage() {
+        // given
+        guard let music = sut.loadLibrary().first?.musics.first else { fatalError() }
+
+        // when
+        let coverImage = sut.getCoverImage(forItemIded: music.id)
+        
+        // then
+        XCTAssertNotNil(coverImage)
+    }
+    
+    func testToggleFavorite() {
+        // given
+        guard let music = sut.loadLibrary().first?.musics.first else { fatalError() }
+
+        // when
         sut.toggleFavorite(music: music, isFavorite: true)
         
-        //when
-        sut.toggleFavorite(music: music, isFavorite: false)
+        // then
+        XCTAssert(sut.favoriteMusics.contains(music))
+    }
+    
+    func testStartPlayingMusic() {
+        // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.last else { fatalError() }
         
-        //then
-        XCTAssertFalse(sut.favoriteMusics.contains(music))
+        // when
+        sut.startPlaying(music: music)
+        
+        // then
+        XCTAssertEqual(sut.queue.nowPlaying, music)
+    }
+    
+    func testStartPlayingCollection() {
+        // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.first else { fatalError() }
+        
+        // when
+        sut.startPlaying(collection: collection)
+        
+        // then
+        XCTAssertEqual(sut.queue.nowPlaying, music)
+    }
+    
+    func testRemoveFromQueue() {
+        // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.last else { fatalError() }
+        sut.startPlaying(collection: collection)
+        
+        // when
+        sut.removeFromQueue(music: music)
+        
+        // then
+        XCTAssertFalse(sut.queue.nowPlaying == music)
+        XCTAssertFalse(sut.queue.nextInCollection.contains(music))
+    }
+    
+    func testSkipFowardQueue() {
+        // given
+        
+        // when
+        
+        // then
         
     }
     
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSearchfavoriteMusics() {
+        // given
+        
+        // when
+        
+        // then
+        
     }
 
     func testPerformanceExample() throws {
