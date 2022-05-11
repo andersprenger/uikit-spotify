@@ -24,11 +24,29 @@ class MusicServiceTests: XCTestCase {
     }
     
     func testLoadLibrarySorted() {
+        //given
+        
+        //when
         let collections = sut.loadLibrary()
+        
+        //then
         XCTAssertGreaterThanOrEqual(collections.count, 2)
         XCTAssertGreaterThanOrEqual(collections[0].referenceDate, collections[1].referenceDate)
     }
 
+    func testUnfavoriteMusic() {
+        //given
+        let music = sut.loadLibrary().first!.musics.first!
+        sut.toggleFavorite(music: music, isFavorite: true)
+        
+        //when
+        sut.toggleFavorite(music: music, isFavorite: false)
+        
+        //then
+        XCTAssertFalse(sut.favoriteMusics.contains(music))
+        
+    }
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

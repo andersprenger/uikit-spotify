@@ -28,6 +28,8 @@
 		71EA523F26811CCE00AA6381 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA523E26811CCE00AA6381 /* LibraryCell.swift */; };
 		BE483CE1282ADA49008ED208 /* UIKit_Nano_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */; };
 		BE483CE8282ADA5E008ED208 /* MusicServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */; };
+		BE483CF0282AE314008ED208 /* UIKit_NanoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CEF282AE314008ED208 /* UIKit_NanoUITests.swift */; };
+		BE483CF2282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE483CF1282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift */; };
 		CDAA090B2682289900CEBDBB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */; };
 		CDAA090F26824BC300CEBDBB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */; };
 		CDAA091126826AA000CEBDBB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAA091026826AA000CEBDBB /* AboutViewController.swift */; };
@@ -37,6 +39,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		BE483CE2282ADA49008ED208 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71709749267D03E700C9C7D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71709750267D03E700C9C7D7;
+			remoteInfo = "UIKit Nano";
+		};
+		BE483CF3282AE314008ED208 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71709749267D03E700C9C7D7 /* Project object */;
 			proxyType = 1;
@@ -70,6 +79,10 @@
 		BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit Nano Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE483CE0282ADA49008ED208 /* UIKit_Nano_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_Nano_Tests.swift; sourceTree = "<group>"; };
 		BE483CE7282ADA5E008ED208 /* MusicServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServiceTests.swift; sourceTree = "<group>"; };
+		BE483CED282AE314008ED208 /* UIKit NanoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit NanoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE483CEF282AE314008ED208 /* UIKit_NanoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_NanoUITests.swift; sourceTree = "<group>"; };
+		BE483CF1282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit_NanoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BE483CF8282AE56F008ED208 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestPlan.xctestplan; path = "UIKit Nano/TestPlan.xctestplan"; sourceTree = SOURCE_ROOT; };
 		CDAA090A2682289900CEBDBB /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		CDAA090E26824BC300CEBDBB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		CDAA091026826AA000CEBDBB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +105,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE483CEA282AE314008ED208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +120,7 @@
 			children = (
 				71709753267D03E700C9C7D7 /* UIKit Nano */,
 				BE483CDF282ADA49008ED208 /* UIKit Nano Tests */,
+				BE483CEE282AE314008ED208 /* UIKit NanoUITests */,
 				71709752267D03E700C9C7D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +130,7 @@
 			children = (
 				71709751267D03E700C9C7D7 /* UIKit Nano.app */,
 				BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */,
+				BE483CED282AE314008ED208 /* UIKit NanoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +138,7 @@
 		71709753267D03E700C9C7D7 /* UIKit Nano */ = {
 			isa = PBXGroup;
 			children = (
+				BE483CF8282AE56F008ED208 /* TestPlan.xctestplan */,
 				71F8E9132687741700EF084E /* App */,
 				71F8E9142687747E00EF084E /* Model */,
 				71F8E9152687749900EF084E /* View */,
@@ -250,6 +273,15 @@
 			path = "UIKit Nano Tests";
 			sourceTree = "<group>";
 		};
+		BE483CEE282AE314008ED208 /* UIKit NanoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE483CEF282AE314008ED208 /* UIKit_NanoUITests.swift */,
+				BE483CF1282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift */,
+			);
+			path = "UIKit NanoUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +320,24 @@
 			productReference = BE483CDE282ADA49008ED208 /* UIKit Nano Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BE483CEC282AE314008ED208 /* UIKit NanoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE483CF7282AE314008ED208 /* Build configuration list for PBXNativeTarget "UIKit NanoUITests" */;
+			buildPhases = (
+				BE483CE9282AE314008ED208 /* Sources */,
+				BE483CEA282AE314008ED208 /* Frameworks */,
+				BE483CEB282AE314008ED208 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE483CF4282AE314008ED208 /* PBXTargetDependency */,
+			);
+			name = "UIKit NanoUITests";
+			productName = "UIKit NanoUITests";
+			productReference = BE483CED282AE314008ED208 /* UIKit NanoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -301,6 +351,10 @@
 						CreatedOnToolsVersion = 12.5;
 					};
 					BE483CDD282ADA49008ED208 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 71709750267D03E700C9C7D7;
+					};
+					BE483CEC282AE314008ED208 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 71709750267D03E700C9C7D7;
 					};
@@ -321,6 +375,7 @@
 			targets = (
 				71709750267D03E700C9C7D7 /* UIKit Nano */,
 				BE483CDD282ADA49008ED208 /* UIKit Nano Tests */,
+				BE483CEC282AE314008ED208 /* UIKit NanoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,6 +394,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BE483CDC282ADA49008ED208 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE483CEB282AE314008ED208 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +445,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE483CE9282AE314008ED208 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE483CF0282AE314008ED208 /* UIKit_NanoUITests.swift in Sources */,
+				BE483CF2282AE314008ED208 /* UIKit_NanoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -390,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = 71709750267D03E700C9C7D7 /* UIKit Nano */;
 			targetProxy = BE483CE2282ADA49008ED208 /* PBXContainerItemProxy */;
+		};
+		BE483CF4282AE314008ED208 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71709750267D03E700C9C7D7 /* UIKit Nano */;
+			targetProxy = BE483CF3282AE314008ED208 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -609,6 +685,44 @@
 			};
 			name = Release;
 		};
+		BE483CF5282AE314008ED208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7DG8QRAF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-NanoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "UIKit Nano";
+			};
+			name = Debug;
+		};
+		BE483CF6282AE314008ED208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M7DG8QRAF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.poa.sprenger.UIKit-NanoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "UIKit Nano";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -635,6 +749,15 @@
 			buildConfigurations = (
 				BE483CE5282ADA49008ED208 /* Debug */,
 				BE483CE6282ADA49008ED208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE483CF7282AE314008ED208 /* Build configuration list for PBXNativeTarget "UIKit NanoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE483CF5282AE314008ED208 /* Debug */,
+				BE483CF6282AE314008ED208 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

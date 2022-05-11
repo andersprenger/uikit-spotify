@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "16FD34AC-CEF6-4A31-A900-7130D883EEA1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:UIKit Nano.xcodeproj",
+        "identifier" : "BE483CDD282ADA49008ED208",
+        "name" : "UIKit Nano Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:UIKit Nano.xcodeproj",
+        "identifier" : "BE483CEC282AE314008ED208",
+        "name" : "UIKit NanoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
