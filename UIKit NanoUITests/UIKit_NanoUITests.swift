@@ -29,12 +29,14 @@ class UIKit_NanoUITests: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
+        app.navigationBars["Library"].tap()
+
         let tablesQuery = app.tables
-        app.tabBars["Tab Bar"].buttons["Library"].tap()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Album · Lady Gaga"]/*[[".cells.staticTexts[\"Album · Lady Gaga\"]",".staticTexts[\"Album · Lady Gaga\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-        tablesQuery.staticTexts["Alice"].tap()
-//        app.navigationBars["Chromatica"].buttons["Library"].tap()
-//        app.tabBars["Tab Bar"].buttons["Favorites"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Playlist · Musicz"]/*[[".cells.staticTexts[\"Playlist · Musicz\"]",".staticTexts[\"Playlist · Musicz\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Just Dance"]/*[[".cells.staticTexts[\"Just Dance\"]",".staticTexts[\"Just Dance\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+        app.buttons["play"].tap()
+        app.buttons["pause"].tap()
     }
 
     func testLaunchPerformance() throws {

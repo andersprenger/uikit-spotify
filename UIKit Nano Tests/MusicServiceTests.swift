@@ -121,22 +121,45 @@ class MusicServiceTests: XCTestCase {
         XCTAssertFalse(sut.queue.nextInCollection.contains(music))
     }
     
-    func testSkipFowardQueue() {
+    func funcSkipNextQueue() throws {
         // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.first else { fatalError() }
+        sut.startPlaying(collection: collection)
         
+        let nextMusic = collection.musics[1]
+
         // when
+        sut.skipForwardQueue()
         
         // then
+        XCTAssertFalse(sut.queue.nowPlaying == music)
+        XCTAssert(sut.queue.nowPlaying == nextMusic)
+    }
+    
+    func testSkipFowardQueue() {
+        // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.first else { fatalError() }
+        sut.startPlaying(collection: collection)
+        sut.skipNextQueue()
+
+        // when
+        sut.skipForwardQueue()
         
+        // then
+        XCTAssert(sut.queue.nowPlaying == music)
     }
     
     func testSearchfavoriteMusics() {
         // given
+        guard let collection = sut.loadLibrary().first, let music = collection.musics.first else { fatalError() }
+        let musicName = music.title
+        sut.toggleFavorite(music: music, isFavorite: true)
         
         // when
+        let results = sut.searchfavoriteMusics(text: musicName)
         
         // then
-        
+        XCTAssertEqual(music, results.first)
     }
 
     func testPerformanceExample() throws {
@@ -145,5 +168,4 @@ class MusicServiceTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

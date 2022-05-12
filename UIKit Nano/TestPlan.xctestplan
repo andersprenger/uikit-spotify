@@ -20,7 +20,6 @@
       }
     },
     {
-      "enabled" : false,
       "target" : {
         "containerPath" : "container:UIKit Nano.xcodeproj",
         "identifier" : "BE483CEC282AE314008ED208",
